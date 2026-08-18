@@ -1,0 +1,31 @@
+/* Purple theme for every logged-in dashboard (admin, cashier, teacher,
+   student, parent). Overrides the blue public-site palette. */
+
+.dash-body {
+    --sidebar: #3b1d63;
+    --sidebar-active: #5a2f92;
+    --purple: #6d28d9;
+    --purple-soft: #f3eefc;
+    --accent: #f0c14b;
+}
+
+.dash-body .btn-primary { background: var(--purple); color: #fff; box-shadow: 0 8px 20px rgba(109,40,217,.28); }
+.dash-body .btn-primary:hover { background: #5b21b6; color: #fff; }
+.dash-body .btn-ghost { border-color: var(--purple); color: var(--purple); }
+.dash-body .btn-ghost:hover { background: var(--purple); color: #fff; }
+.dash-body .btn-gold { background: var(--accent); color: #2a1148; }
+.dash-body a { color: var(--purple); }
+.dash-body a:hover { color: #4c1d95; }
+.dash-body h1, .dash-body h2, .dash-body h3 { color: #26123f; }
+
+.dash-body table.data th { background: var(--purple-soft); color: #3b1d63; }
+.dash-body .field input:focus, .dash-body .field select:focus, .dash-body .field textarea:focus {
+    border-color: var(--purple); box-shadow: 0 0 0 3px rgba(109,40,217,.15);
+}
+
+.dash-sidebar { background: linear-gradient(185deg, #3b1d63, #2a1148); }
+
+.stat.stat-purple .ico { background: #ede4fb; color: #5b21b6; }
+.stat.stat-gold .ico { background: #fdf3d8; color: #9a6b00; }
+.stat.stat-green .ico { background: #e2f6ea; color: #14713c; }
+.stat.stat-red .ico { background: #fdecec; color: #a52020; }

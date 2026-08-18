@@ -1,0 +1,57 @@
+/* Mobile responsive rules */
+
+@media (max-width: 1080px) {
+    .grid-4 { grid-template-columns: repeat(2, 1fr); }
+    .gallery { grid-template-columns: repeat(3, 1fr); }
+    .site-footer .footer-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 900px) {
+    .nav-toggle { display: inline-block; }
+    .nav {
+        position: absolute; top: 100%; left: 0; right: 0; background: var(--blue-dark);
+        flex-direction: column; align-items: stretch; padding: 10px 14px 18px; gap: 2px; display: none;
+    }
+    .nav.open { display: flex; animation: fade-in-up .22s ease; }
+    .nav .dropdown-menu { position: static; box-shadow: none; background: rgba(255,255,255,.08); }
+    .nav .dropdown-menu a { color: #eaf1fb; }
+    .nav .dropdown-menu a:hover { background: rgba(255,255,255,.12); color: var(--gold-soft); }
+
+    .split, .grid-2, .grid-3, .form-grid { grid-template-columns: 1fr; }
+    .auth-wrap { grid-template-columns: 1fr; }
+    .auth-aside { display: none; }
+    .hero { min-height: 70vh; }
+    .hero-stats { gap: 26px; }
+    .section { padding: 52px 0; }
+
+    .dash-sidebar {
+        position: fixed; inset: 0 auto 0 0; transform: translateX(-100%); transition: transform .28s ease; z-index: 150;
+    }
+    .dash-sidebar.open { transform: none; }
+    .dash-main { margin-left: 0 !important; }
+    .dash-topbar .menu-btn { display: inline-flex; }
+    .stat-grid { grid-template-columns: repeat(2, 1fr); }
+    .chat-app { grid-template-columns: 1fr; }
+    .chat-list { display: none; }
+    .chat-app.show-list .chat-list { display: block; }
+    .chat-app.show-list .chat-thread { display: none; }
+}
+
+@media (max-width: 620px) {
+    .grid-4, .stat-grid { grid-template-columns: 1fr; }
+    .gallery { grid-template-columns: repeat(2, 1fr); }
+    .site-footer .footer-grid { grid-template-columns: 1fr; }
+    .topbar .container { flex-direction: column; align-items: flex-start; gap: 6px; }
+    .hero-actions .btn { width: 100%; }
+    table.data { font-size: .84rem; }
+    table.data th, table.data td { padding: 9px 10px; }
+    .modal { max-width: 100%; }
+}
+
+@media print {
+    .site-header, .topbar, .site-footer, .dash-sidebar, .dash-topbar, .no-print { display: none !important; }
+    body { background: #fff; }
+    .dash-main { margin: 0 !important; }
+    .result-sheet { box-shadow: none; border: 1px solid #333; }
+    @page { size: A4; margin: 12mm; }
+}
